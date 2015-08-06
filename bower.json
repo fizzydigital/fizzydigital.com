@@ -1,0 +1,13 @@
+{
+  "name": "fizzydigital.com",
+  "version": "1.0.0",
+  "description": "Fizzy Ditial is an independent digital agency and this is their website.",
+  "dependencies": {
+    "lesshat": "~3.0.2",
+    "animate.css": "~3.4.0",
+    "normalize.css": "~3.0.3",
+    "jquery": "~2.1.4",
+    "backbone": "~1.2.1",
+    "underscore": "~1.8.3"
+  }
+}
