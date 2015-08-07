@@ -57,6 +57,8 @@ grunt.config.merge( {
 						pattern:	'*.html',
 						partials:	{
 
+							menu: 'partials/menu',
+							header: 'partials/header',
 							footer: 'partials/footer'
 
 						}

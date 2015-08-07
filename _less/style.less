@@ -2,19 +2,29 @@
 @import ( less ) 'bower_components/animate.css/animate.css';
 
 @import 'bower_components/lesshat/build/lesshat';
+// @import 'bower_components/bootstrap/less/bootstrap';
 
 @import 'variables';
+@import 'mixins';
+@import 'type';
+@import 'buttons';
 
 body {
 
 	background: @white;
-	font-family: @sans;
-	padding: 20px;
+	color: @black;
+	margin: 0;
+	padding: 0;
 
-	.container {
+	nav {
 
-		margin: 0 auto;
-		max-width: 940px;
+		ul {
+
+			.list-inline;
+
+			li { margin: 0 40px; }
+
+		}
 
 	}
 

@@ -1,0 +1,215 @@
+// EMs
+
+.font-size( @target: @fontSize, @default: @fontSize ) { font-size: ( @target / @default ) + 0em; }
+
+.letter-spacing( @value ) { letter-spacing: ( @value / 1000 ) + 0em; }
+
+// Vertical centering
+
+.align-middle {
+
+	.transform( translateY( -50% ) translateX( -50% ) );
+
+	position: absolute;
+
+	top: 50%;
+	left: 50%;
+
+}
+
+// Triangles
+
+#triangle {
+
+	.base( @width, @height, @color ) {
+	
+		border-color: transparent;
+		border-style: solid;
+
+		height: 0px;
+		width: 0px;
+
+	}
+
+	.top( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: 0 @width / 2 @height @width / 2;
+		border-bottom-color: @color;
+		border-left-color: fade( @color, 0 );
+		border-right-color: fade( @color, 0 );
+
+	}
+
+	.top( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: 0 @width / 2 @height @width / 2;
+		border-bottom-color: @color;
+		border-left-color: fade( @color, 0 );
+		border-right-color: fade( @color, 0 );
+
+	}
+
+	.bottom( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: @height @width / 2 0 @width / 2;
+		border-top-color: @color;
+		border-left-color: fade( @color, 0 );
+		border-right-color: fade( @color, 0 );
+
+	}
+
+	.right( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: @height / 2 0 @height / 2 @width;
+		border-left-color: @color;
+		border-top-color: fade( @color, 0 );
+		border-bottom-color: fade( @color, 0 );
+
+	}
+
+	.left( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: @height / 2 @width @height / 2 0;
+		border-right-color: @color;
+		border-top-color: fade( @color, 0 );
+		border-bottom-color: fade( @color, 0 );
+
+	}
+
+	.top-right( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: 0 @width @height 0;
+		border-right-color: @color;
+		border-bottom-color: fade( @color, 0 );
+
+	}
+
+	.top-left( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: @height @width 0 0;
+		border-top-color: @color;
+		border-right-color: fade( @color, 0 );
+
+	}
+
+	.bottom-right( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: 0 0 @height @width;
+		border-bottom-color: @color;
+		border-left-color: fade( @color, 0 );
+
+	}
+
+	.bottom-left( @width, @height, @color ) {
+
+		.base( @width, @height, @color );
+
+		border-width: @height 0 0 @width;
+		border-left-color: @color;
+		border-top-color: fade( @color, 0 );
+
+	}
+
+}
+
+// Typography
+
+.tl() { text-align: left; }
+.tr() { text-align: right; }
+.tc() { text-align: center; }
+.tj() { text-align: justify; }
+
+// Removes margin from the last element
+
+.remove-first-margin() {
+
+	&:first-of-type:not( :only-of-type ) {
+
+		margin-top: 0;
+
+		& + * { margin-bottom: @margin; }
+
+	}
+
+}
+
+// Lists - can be used as inline classes
+
+.list-remove-bullets() {
+
+	list-style-type: none;
+	padding: 0;
+
+}
+
+.list-inline() {
+
+	.clearfix;
+	.list-remove-bullets;
+
+	display: table;
+	line-height: 1;
+	margin: auto;
+
+	li {
+
+		display: inline-block;
+		float: left;
+		line-height: 1;
+
+	}
+
+}
+
+// Utilities
+
+.pseudo() {
+
+	content: '';
+	display: block;
+
+}
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+
+.clearfix() {
+
+	*zoom: 1;
+	
+	&:before,
+	&:after {
+		
+		content: '';
+		display: table;
+
+	}
+
+	&:after { clear:both; }
+
+}
+
+// Used mostly for icons or backgrounds
+
+.hide-text() {
+
+	display: inline-block;
+	text-indent: -999em;
+	white-space: nowrap;
+
+}
